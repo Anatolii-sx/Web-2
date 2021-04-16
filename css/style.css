@@ -908,8 +908,8 @@ color: #c7b299;
    padding: 0 0 0 30px;
 }
 
-.section4-right-list-summary {
-   list-style-type: none;
+.section4-right-list-summary::-webkit-details-marker {
+   display: none;
 }
 
 .section4-right-list-summary::before {
@@ -1262,8 +1262,8 @@ color: #c7b299;
    color: #d1d1d1;
 }
 
-.footer-middle-box1-figcaption-details-summary {
-   list-style-type: none;
+.footer-middle-box1-figcaption-details-summary::-webkit-details-marker {
+   display: none;
 }
 
 .footer-middle-box1-figcaption-details-summary::after {
