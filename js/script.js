@@ -143,7 +143,7 @@ function VideoClick() {
         // Исчезновение описания к видео
 
         for (let i = 0; i < videoDescription.length; i++) {
-            videoDescription[i].classList.add('video-description-hide');
+            videoDescription[i].style.display = 'none';
         }
 
         // Исчезновение кнопки паузы через 3 секунды

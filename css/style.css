@@ -855,7 +855,7 @@ color: #c7b299;
 }
 
 .section3-time {
-   font-family: Montserrat;
+   font-family: 'Montserrat';
    font-size: 14px;
    line-height: 24px;
    font-weight: 400;
@@ -869,13 +869,6 @@ color: #c7b299;
    height: 0;
    transition: opacity .2s ease,
                height .4s ease;
-}
-
-.video-description-hide {
-   opacity: 0;
-   height: 0;
-   transition: opacity 1.3s ease,
-               height 1s ease;
 }
 
 /*Запрет выделения текста*/
