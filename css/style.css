@@ -813,17 +813,26 @@ color: #c7b299;
    justify-content: center;
    align-items: center;
    padding: 0;
+   position: relative;
+   opacity: 1;
+   transition: opacity .4s ease;
 }
 
-.section3-playicon {
+.section3-playicon, 
+.section3-playicon-pause {
    fill: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 .section3-btn:hover {
    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.section3-btn:hover .section3-playicon {
+.section3-btn:hover .section3-playicon,
+.section3-btn:hover .section3-playicon-pause {
    fill: rgb(49, 250, 49);
 }
 
@@ -852,6 +861,31 @@ color: #c7b299;
    font-weight: 400;
    color: #c7b299;
    margin: 0 0 15px 0;
+}
+
+/* For JS */
+.video-btn-opacity0 {
+   opacity: 0;
+   height: 0;
+   transition: opacity .2s ease,
+               height .4s ease;
+}
+
+.video-description-hide {
+   opacity: 0;
+   height: 0;
+   transition: opacity 1.3s ease,
+               height 1s ease;
+}
+
+/*Запрет выделения текста*/
+.section3-description {
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none; 
 }
 
 /*SECTION 4*/
@@ -1595,7 +1629,8 @@ color: #c7b299;
       margin: 0 auto 30px auto;
    }
 
-   .section3-playicon {
+   .section3-playicon,
+   .section3-playicon-pause {
       width: 60px;
       height: 60px;
    }
@@ -2025,7 +2060,8 @@ color: #c7b299;
       margin: 0 auto 15px auto;
    }
 
-   .section3-playicon {
+   .section3-playicon,
+   .section3-playicon-pause {
       width: 30px;
       height: 30px;
    }

@@ -119,6 +119,64 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// Видео
+
+const videoBox = document.querySelector('.section3');
+const video = document.querySelector('.section3-video');
+let pause = document.querySelector('.section3-playicon-pause');
+let play = document.querySelector('.section3-playicon');
+let videoDescription = document.querySelectorAll('.section3-description');
+const videoButtonFull = document.querySelector('.section3-btn');
+let time = '';
+
+
+videoBox.onclick = VideoClick;
+
+function VideoClick() {
+    if (video.paused) {
+        video.play();
+        play.classList.toggle('video-btn-opacity0');
+        pause.classList.toggle('video-btn-opacity0');
+
+        video.style.filter = 'brightness(100%)';
+
+        // Исчезновение описания к видео
+
+        for (let i = 0; i < videoDescription.length; i++) {
+            videoDescription[i].classList.add('video-description-hide');
+        }
+
+        // Исчезновение кнопки паузы через 3 секунды
+
+        function hidePauseBtn() {
+            videoButtonFull.style.opacity = 0;
+        }
+
+        time = setTimeout(hidePauseBtn, 3000);
+
+    }
+
+    else if (video.play) {
+        video.pause();
+        play.classList.toggle('video-btn-opacity0');
+        pause.classList.toggle('video-btn-opacity0');
+
+        // Затемнение видео при паузе
+        video.style.filter = 'brightness(40%)';
+
+        videoButtonFull.style.opacity = 1;
+        clearTimeout(time);
+    }
+};
+
+// Pause/play при нажатии Space
+
+document.addEventListener('keydown', function (e) {
+    if (e.key == " " || e.code == "Space") {
+        e.preventDefault(); // Чтобы не скроллилась страница при нажатии на Space
+        VideoClick();
+    }
+});
 
 
 
